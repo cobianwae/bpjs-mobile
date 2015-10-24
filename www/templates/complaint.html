@@ -1,0 +1,29 @@
+<ion-view title="Keluhan">
+    <ion-content padding="true" class="has-header">
+        <form class="list">
+            <label class="item item-input" name="disease">
+                <span class="input-label">Keluhan</span>
+                <input type="text" placeholder="Contoh : Flu, Demam">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Tanggal Pemeriksaan</span>
+                <input type="date" placeholder="">
+            </label>
+        </form>
+        <div class="button-bar"></div>
+        <form class="list">
+            <ion-radio ng-model="model.location" text="Alamat Di KTP" value="identity_number" ng-change="changeLocation('identity_number')">Alamat Di KTP</ion-radio>
+            <ion-radio ng-model="model.location" text="Lokasi Sekarang" value="current_location" ng-change="changeLocation('current_location')">Lokasi Sekarang</ion-radio>
+        </form>        
+        <div ng-if="model.location == 'current_location'">
+            <map zoom="15">           
+              <!-- <marker ng-repeat="pos in positions" position="{{pos.lat}},{{pos.lng}}"></marker> -->
+              <marker position="{{latitude}},{{longitude}}"></marker>
+            </map> 
+        </div>
+        <div ng-if="model.location == 'identity_number'">
+            <p>Jl. Melong Kidul No 17/36D RT 04/05 Kel. Cikawao, Kec. Lengkong Kota Bandung Provinsi Jawa Barat.</p>
+        </div>
+        <button class="button button-positive button-block" ng-click="submit()">Kirim Keluhan</button>
+    </ion-content>
+</ion-view>

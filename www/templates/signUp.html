@@ -4,14 +4,14 @@
             <ion-list>
                 <label class="item item-input" name="bpjs_number">
                     <span class="input-label">No BPJS</span>
-                    <input type="text" placeholder="">
+                    <input type="text" placeholder="" ng-model="model.bpjs_number">
                 </label>
                 <label class="item item-input" name="password">
                     <span class="input-label">Password</span>
-                    <input type="password" placeholder="">
+                    <input type="password" placeholder="" ng-model="password">
                 </label>
             </ion-list>
-            <button class="button button-stable button-block ">Sign up</button>
+            <button class="button button-stable button-block" ng-click="submit()">Sign up</button>
         </form>
     </ion-content>
 </ion-view>

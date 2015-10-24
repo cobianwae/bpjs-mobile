@@ -20,30 +20,30 @@ angular.module('app.routes', [])
     
       
         
-    .state('daftar', {
+    .state('signup', {
       url: '/signup',
-      templateUrl: 'templates/daftar.html',
-      controller: 'daftarCtrl'
+      templateUrl: 'templates/signUp.html',
+      controller: 'signupCtrl'
     })
         
       
     
       
         
-    .state('konfirmasiPendaftaran', {
-      url: '/confirm-signup',
-      templateUrl: 'templates/konfirmasiPendaftaran.html',
-      controller: 'konfirmasiPendaftaranCtrl'
+    .state('signupConfirmation', {
+      url: '/signup-confirmation',
+      templateUrl: 'templates/signupConfirmation.html',
+      controller: 'signupConfirmationCtrl'
     })
         
       
     
       
         
-    .state('keluhan', {
+    .state('complaint', {
       url: '/complaint',
-      templateUrl: 'templates/keluhan.html',
-      controller: 'keluhanCtrl'
+      templateUrl: 'templates/complaint.html',
+      controller: 'complaintCtrl'
     })
         
       
