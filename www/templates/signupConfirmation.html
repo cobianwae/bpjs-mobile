@@ -10,17 +10,18 @@
         <form class="list"></form>
         <div>
             <label>Nama Lengkap:</label>
-            <span>Mochamad Fazar</span>
+            <span>{{userProfile.fullname}}</span>
         </div>
         <div>
             <label>Alamat:</label>
-            <span>Jl. Melong Kidul No 17/36D RT 04/05 Kel. Cikawao, Kec. Lengkong Kota Bandung Provinsi Jawa Barat.</span>
+            <span>{{userAddress.location}}, {{userAddress.village}}, {{userAddress.subdistrict}},
+                {{userAddress.regency}} {{userAddress.province}}</span>
         </div>
         <form class="list"></form>
         <form class="list">
             <label class="item item-input" name="identity_number">
-                <span class="input-label">KTP</span>
-                <input type="text" placeholder="">
+                <span class="input-label">3 Digit No KTP</span>
+                <input type="text" placeholder="" ng-model="model.identity_number_end">
             </label>
         </form>
         <button class="button button-positive button-block " ng-click="next()">Lanjutkan</button>

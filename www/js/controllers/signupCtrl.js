@@ -1,11 +1,24 @@
 angular.module('app.controllers')
-.controller('signupCtrl', function($scope, User, $state) {
+.controller('signupCtrl', function($scope, User, $state, $ionicPopup, $rootScope) {
 	$scope.model = {};
 	$scope.submit = function() {		
-		/*console.log($scope.model);
+		/*console.log($scope.model);*/
+
 		User.save($scope.model, function(data){
-			$state.go('signup-confirmation');
-		});*/
-		$state.go('signupConfirmation');
+			if(data.success == true) {
+				console.log(data);
+				$rootScope.userProfile = data.user;
+				$rootScope.userAddress = data.address;
+				$state.go('signupConfirmation');
+			} else {
+				$ionicPopup.alert({
+	     		title: 'Terjadi Error',
+	     		template: data.message
+		   });
+			}
+			
+			//
+		});
+		//$state.go('signupConfirmation');
 	}
 })

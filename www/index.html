@@ -14,7 +14,11 @@
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="lib/ionic/js/angular/angular-resource.js"></script>
+    <script src="lib/angular-websocket/angular-websocket.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="lib/ionic-service-core/ionic-core.js"></script>
+    <script src="lib/ionic-service-push/ionic-push.js"></script>
+    <script src="lib/angular-resource/angular-resource.min.js"></script>
     <script src="lib/ngmap/build/scripts/ng-map.min.js"></script>
     <script src="http://maps.google.com/maps/api/js"></script>
     <script src="cordova.js"></script>
@@ -30,16 +34,20 @@
     <script src="js/services/authInterceptor.js"></script>
     <script src="js/services/userService.js"></script>
     <script src="js/services/complaintService.js"></script>
+    <script src="js/services/verificationService.js"></script>
     <script src="js/controllers.js"></script>    
     <script src="js/controllers/signupCtrl.js"></script>
     <script src="js/controllers/signupConfirmationCtrl.js"></script>
     <script src="js/controllers/loginCtrl.js"></script>
     <script src="js/controllers/complaintCtrl.js"></script>
+    <script src="js/controllers/statusCtrl.js"></script>
+    <script src="js/controllers/detailStatusCtrl.js"></script>
     <script src="js/routes.js"></script>    
     
     <script src="js/directives.js"></script>
 
-  </head>
+  
+<script src="lib/ngCordova/dist/ng-cordova.js"></script></head>
   <body ng-app="app" animation="slide-left-right-ios7">
   <div>
     <div>

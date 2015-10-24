@@ -61,7 +61,7 @@ angular.module('app.routes', [])
       
         
     .state('detailStatus', {
-      url: '/status-details',
+      url: '/status-details/:id',
       templateUrl: 'templates/detailStatus.html',
       controller: 'detailStatusCtrl'
     })

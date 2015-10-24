@@ -1,23 +1,22 @@
 angular.module('app.controllers')
-.controller('signupConfirmationCtrl', function($scope, User, $state, $ionicPopup) {
+.controller('signupConfirmationCtrl', function($scope, User, $state, $ionicPopup, $rootScope, Verification, $window) {
 	$scope.model = {};
 	$scope.next = function() {
-		console.log($scope.model);
-		/*User.save($scope.model, function(data){
-			$state.go('signup-confirmation');
-		});*/
+		var req = {user_id: $rootScope.userProfile.id, identity_number_end : $scope.model.identity_number_end};
 
-		/*User.update($scope.model, function(data){
-			if(data.isSuccess) {*/
+		Verification.save(req, function(data){
+			console.log(data);
+			if(data.success) {
+				$window.localStorage.token = data.token;
 				$ionicPopup.alert({
 		     title: 'Konfirmasi Pendaftaran',
 		     template: 'Pendaftaran berhasil.'
 		   }).then(function(){
-		   		$state.go('login');
+		   		$state.go('complaint');
 		   });
 				
-			/*}
-		})*/
+			}
+		})
 	}
 
 	

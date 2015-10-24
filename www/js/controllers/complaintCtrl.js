@@ -20,15 +20,21 @@ angular.module('app.controllers')
   		$scope.model.location_reference = 'address';
   	}
   	console.log($scope.model);
+    Complaint.save($scope.model, function(data){
+      console.log(data);
 
+    })
   	/*Complaint.save($scope.model, function(){
 
   	});*/
   }
 
-  /*$scope.changeLocation = function(value) {  	
+
+
+  $scope.changeLocation = function(value) {  	
   	console.log(value);
-  }*/
+    $scope.location = value;
+  }
   /*$scope.usingCurrentLocation = function() {
   	console.log('sini 2');
   	$scope.isCurrentLocation = true;
