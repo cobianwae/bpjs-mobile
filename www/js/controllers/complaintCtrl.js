@@ -1,7 +1,7 @@
 angular.module('app.controllers')
-.controller('complaintCtrl', function($scope, User, $state, $ionicLoading) {	 
+.controller('complaintCtrl', function($scope, User, $state, $ionicLoading, Complaint) {	 
   $scope.model = {};
-  $scope.model.location = 'current_location';
+  $scope.location = 'current_location';
   $scope.isCurrentLocation = true;
   $scope.$on('mapInitialized', function(event, map) {  	
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -12,6 +12,19 @@ angular.module('app.controllers')
       console.log($scope.latitude);
     });
   });
+
+  $scope.submit = function() {
+  	if($scope.location === 'current_location') {
+  		$scope.model.location_reference = $scope.latitude + ',' + $scope.longitude;
+  	} else {
+  		$scope.model.location_reference = 'address';
+  	}
+  	console.log($scope.model);
+
+  	/*Complaint.save($scope.model, function(){
+
+  	});*/
+  }
 
   /*$scope.changeLocation = function(value) {  	
   	console.log(value);
