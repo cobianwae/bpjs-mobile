@@ -1,24 +1,36 @@
 <ion-view title="Detail Status">
     <ion-content padding="true" class="has-header">
         <div class="list card">
-            <div class="item item-divider">Flu</div>
+            <div class="item item-divider">{{model.complaint.disease}}</div>
             <div class="item item-body">
                 <div class="row">
                     <div class="col col-35">Rumah Sakit</div>
-                    <div class="col col-65">: Hasan Sadikin</div>
+                    <div class="col col-65">: {{model.userQueue.dailyQueue.hospital.name}}</div>
                 </div>
                 <div class="row">
                     <div class="col col-35">Pelayanan</div>
-                    <div class="col col-65">: Dokter Umum</div>
+                    <div class="col col-65">: {{model.userQueue.dailyQueue.hospitalService.name}}</div>
+                </div>
+                <div class="row">
+                    <div class="col col-35">No Antrian Anda</div>
+                    <div class="col col-65">: {{model.userQueue.number}}</div>
+                </div>
+                <div class="row">
+                    <div class="col col-35">No Antrian Saat Ini</div>
+                    <div class="col col-65">: {{model.userQueue.dailyQueue.progressed_number}}</div>
+                </div>
+                <div class="row">
+                    <div class="col col-35">Waktu Perkiraan Per Orang (dalam menit)</div>
+                    <div class="col col-65">: {{model.userQueue.dailyQueue.time_average}}</div>
                 </div>
             </div>
         </div>
-        <button class="button button-block button-dark" ng-click="identifyUser()">
+        <!-- <button class="button button-block button-dark" ng-click="identifyUser()">
             Identify a user
         </button>
         <button class="button button-block button-positive" ng-if="identified" ng-click="pushRegister()">
             Register for Push
-        </button>
+        </button> -->
         <button class="button button-assertive button-block  icon-left ion-android-cancel">Batalkan</button>
     </ion-content>
 </ion-view>

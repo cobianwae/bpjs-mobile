@@ -27,6 +27,6 @@ angular.module('app', ['ionic', 'ngCordova', 'ionic.service.core', 'ionic.servic
   $ionicAppProvider.identify({
     app_id: 'c23e2c86',
     api_key: '1e412d7f9e04b8afecd32e34c1670b0f93f02d07fd6546c7',
-    //dev_push: true
+    dev_push: true
   });
 }])
